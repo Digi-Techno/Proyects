@@ -1871,6 +1871,30 @@ main, header, footer, section { max-width: 100%; }
     .cmp-grid > .cmp-cell:nth-last-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,0.045); }
 }
 
+/* ════════════════════════════════════════════════════════════
+   ✦ LIMPIEZA DE BORDES — Sin líneas/filos brillantes ✦
+   Mantiene el efecto glass (desenfoque + translucidez) pero
+   elimina las líneas de neón animadas y los reflejos de borde.
+   ════════════════════════════════════════════════════════════ */
+/* Quitar las líneas de escáner animadas (las rayas de color que cruzan los paneles) */
+.scanner-line { display: none !important; }
+
+/* Quitar el filo blanco superior del cristal líquido */
+.liquid-glass::after { display: none !important; }
+
+/* Quitar el borde brillante del núcleo lq */
+.lq::before { display: none !important; }
+
+/* Aplanar el reflejo superior de los paneles de cristal */
+.glass-panel::before { background: none !important; box-shadow: none !important; }
+
+/* Atenuar la cáustica de luz para que no genere zonas brillantes marcadas */
+.liquid-glass::before { opacity: 0.1 !important; }
+
+/* Suavizar los bordes superiores de neón en menús y modales emergentes */
+.projects-dropdown { border-top-width: 1px !important; border-top-color: rgba(255,255,255,0.10) !important; }
+.nx-card { border-top-width: 1px !important; border-top-color: rgba(255,255,255,0.10) !important; }
+
 </style>
 </head>
 <body class="p-4 md:p-8">
